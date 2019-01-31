@@ -22,6 +22,8 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #        -- IN the loop?
 #        -- AFTER the loop?
 # -----------------------------------------------------------------------------
+import math
+
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_more_cosines()
@@ -32,7 +34,7 @@ def main():
 def run_test_sum_more_cosines():
     """ Tests the   sum_more_cosines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  sum_more_cosines  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
     #
@@ -67,12 +69,34 @@ def run_test_sum_more_cosines():
         print('       actual:  ', answer)
 
     # -------------------------------------------------------------------------
-    # TODO: 2 (continued).
+    # DONE: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 
+    # Test 2:
+    expected = -0.27565
+    answer = sum_more_cosines(1, 5)
+    print('Test 1 expected:', expected, '(approximately)')
+    if answer is not None:
+        print('     actual: ', round(answer, 5))
+    else:
+        print('     actual: ', answer)
+
+    # Test 3:
+    expected = 1.47825
+    answer = sum_more_cosines(0, 7)
+    print('Test 1 expected:', expected, '(approximately)')
+    if answer is not None:
+        print('     actual: ', round(answer, 5))
+    else:
+        print('     actual: ', answer)
+
 
 def sum_more_cosines(m, n):
+    total = 0
+    for k in range(n+1):
+        total = total + (math.cos(m+k))
+    return total
     """
     What comes in:  Integers m and n, with m <= n.
     What goes out:  Returns the sum
@@ -87,7 +111,7 @@ def sum_more_cosines(m, n):
          which is approximately 0.02082.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
