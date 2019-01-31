@@ -152,36 +152,44 @@ def run_test_count_sines_from():
     # -------------------------------------------------------------------------
 
     # Test 2:
-    expected = 1
+    expected = 6
     answer = count_sines_from(5, 10)
     print('Test 2 expected:', expected)
     print('       actual:', answer)
 
     # Test 3:
-    expected = 1
+    expected = 14
     answer = count_sines_from(7, 20)
     print('Test 3 expected:', expected)
     print('       actual:', answer)
 
     # Test 4:
-    expected = 1
+    expected = 3
     answer = count_sines_from(2, 5)
     print('Test 4 expected:', expected)
     print('       actual:', answer)
 
     # Test 5:
-    expected = 1
+    expected = 3
     answer = count_sines_from(1, 5)
     print('Test 5 expected:', expected)
     print('       actual:', answer)
 
     # Test 6:
-    expected = 1
+    expected = 5
     answer = count_sines_from(4, 7)
     print('Test 6 expected:', expected)
     print('       actual:', answer)
 
+
 def count_sines_from(m, n):
+    count = 0
+    for k in range(n):
+        if math.sin(k) < 0.5:
+            count = count + 1
+
+    return count
+
     """
     What comes in:  Integers m and n, with m <= n.
     What goes out:  Returns the number of integers from m to n,
@@ -201,7 +209,7 @@ def count_sines_from(m, n):
       -- count_sines_from(9, 9)  returns  1
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
