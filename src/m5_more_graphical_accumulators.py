@@ -141,6 +141,9 @@ def run_test_draw_circles_from_rectangle():
     ###########################################################################
     # -------------------------------------------------------------------------
 
+    # Test 1:
+    expected =
+    answer =
 
 def draw_circles_from_rectangle(m, n, rectangle, window):
     """
