@@ -187,6 +187,11 @@ def run_test_factorial():
 
 
 def factorial(n):
+    total = 1
+    for k in range(n):
+        total = total * (k+1)
+    return total
+
     """
     What comes in:  The sole argument is a non-negative integer n.
     What goes out:  Returns n!, that is, n x (n-1) x (n-2) x ... x 1.
