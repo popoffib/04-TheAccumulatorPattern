@@ -314,7 +314,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
       :type window: rg.RoseWindow
       """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -328,6 +328,24 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     ###########################################################################
     # -------------------------------------------------------------------------
 
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+
+    for k in range(n):
+        x = rg.Point(rectangle1.get_center().x - k/2*(rectangle1.get_width()),
+                     rectangle1.get_center().y + k/2*(rectangle1.get_height()))
+        y = rg.Point(rectangle2.get_center().x - k/2*(rectangle1.get_width()),
+                     rectangle2.get_center().y + k/2*(rectangle1.get_height()))
+        line = rg.Line(x, y)
+        line.thickness = 5
+        print(k)
+        if k%2 == 0:
+            line.color = rectangle1.outline_color
+        else:
+            line.color = rectangle2.outline_color
+        line.attach_to(window)
+
+    window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
