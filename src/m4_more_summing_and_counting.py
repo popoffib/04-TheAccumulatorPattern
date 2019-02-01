@@ -161,6 +161,12 @@ def run_test_factorial():
     print('Test 2 expected (from oracle):', answer_from_oracle)
     print('       actual (from my code): ', answer_from_my_code)
 
+    # -------------------------------------------------------------------------
+    # TO DO: 4 (continued).
+    # Below this comment, add 3 more test cases, at least two of which
+    #   ** uses  math.factorial  as an ORACLE for testing. **
+    # -------------------------------------------------------------------------
+
     # Test 3:
     answer_from_oracle = math.factorial(5)
     answer_from_my_code = factorial(5)
@@ -179,19 +185,6 @@ def run_test_factorial():
     print('Test 5 expected (from oracle):', answer_from_oracle)
     print('       actual (from my code):', answer_from_my_code)
 
-    # -------------------------------------------------------------------------
-    # TO DO: 4 (continued).
-    # Below this comment, add 3 more test cases, at least two of which
-    #   ** uses  math.factorial  as an ORACLE for testing. **
-    # -------------------------------------------------------------------------
-
-
-def factorial(n):
-    total = 1
-    for k in range(n):
-        total = total * (k+1)
-    return total
-
     """
     What comes in:  The sole argument is a non-negative integer n.
     What goes out:  Returns n!, that is, n x (n-1) x (n-2) x ... x 1.
@@ -207,6 +200,13 @@ def factorial(n):
     # IMPORTANT:  Your solution MUST
     #   use an explicit    for ... in range(...):     statement.
     # -------------------------------------------------------------------------
+
+
+def factorial(n):
+    total = 1
+    for k in range(n):
+        total = total * (k+1)
+    return total
 
 
 def run_test_count_cosines_from():
