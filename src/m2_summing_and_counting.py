@@ -245,36 +245,43 @@ def run_test_count_sines_vs_cosines():
     # -------------------------------------------------------------------------
 
     # Test 2:
-    expected = 1
+    expected = 50
     answer = count_sines_vs_cosines(50)
     print('Test 2 expected:', expected)
     print('       actual:', answer)
 
     # Test 3:
-    expected = 1
+    expected = 90
     answer = count_sines_vs_cosines(90)
     print('Test 3 expected:', expected)
     print('       actual:', answer)
 
     # Test 4:
-    expected = 1
+    expected = 23
     answer = count_sines_vs_cosines(22)
     print('Test 4 expected:', expected)
     print('       actual:', answer)
 
     # Test 5:
-    expected = 1
+    expected = 15
     answer = count_sines_vs_cosines(15)
     print('Test 5 expected:', expected)
     print('       actual:', answer)
 
     # Test 6:
-    expected = 1
+    expected = 77
     answer = count_sines_vs_cosines(77)
     print('Test 6 expected:', expected)
     print('       actual:', answer)
 
+
 def count_sines_vs_cosines(m):
+    count = 0
+    for k in range((-m), (m+1)):
+            if math.sin(k) > math.cos(k):
+                count = count + 1
+    return count
+
     """
     What comes in:  A non-negative integer m.
     What goes out:  Returns the number of integers from -m to m,
@@ -300,7 +307,7 @@ def count_sines_vs_cosines(m):
       -- Also:  count_sines_vs_cosines(101) returns 100 (trust me!)
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
